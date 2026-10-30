@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="Segoe UI, Arial, sans-serif" font-size="14">
+  <rect width="900" height="520" fill="#ffffff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#1f2937">LabShop Mini-SOC: Week 1 lab (host-only 10.10.10.0/24)</text>
+
+  <!-- Dell host -->
+  <rect x="20" y="60" width="860" height="440" rx="12" fill="#f3f4f6" stroke="#9ca3af" stroke-dasharray="6 4"/>
+  <text x="36" y="84" font-weight="bold" fill="#374151">Dell laptop (VirtualBox 7.2.12), host-only adapter 10.10.10.1</text>
+
+  <!-- siem-host -->
+  <rect x="300" y="110" width="300" height="190" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="450" y="135" text-anchor="middle" font-weight="bold" fill="#1e3a8a">siem-host  10.10.10.10</text>
+  <text x="450" y="154" text-anchor="middle" fill="#1e3a8a">Ubuntu Server 26.04.1, 16 GB, 6 vCPU</text>
+  <rect x="318" y="170" width="264" height="32" rx="6" fill="#ffffff" stroke="#2563eb"/>
+  <text x="450" y="191" text-anchor="middle">wazuh.manager  (1514, 1515, 55000)</text>
+  <rect x="318" y="208" width="264" height="32" rx="6" fill="#ffffff" stroke="#2563eb"/>
+  <text x="450" y="229" text-anchor="middle">wazuh.indexer  (9200)</text>
+  <rect x="318" y="246" width="264" height="32" rx="6" fill="#ffffff" stroke="#2563eb"/>
+  <text x="450" y="267" text-anchor="middle">wazuh.dashboard  (443, HTTPS)</text>
+  <text x="450" y="292" text-anchor="middle" font-size="12" fill="#1e3a8a">Docker Compose, Wazuh 4.14.9 single-node</text>
+
+  <!-- ubuntu-web -->
+  <rect x="50" y="360" width="260" height="110" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="180" y="386" text-anchor="middle" font-weight="bold" fill="#14532d">ubuntu-web  10.10.10.20</text>
+  <text x="180" y="406" text-anchor="middle" fill="#14532d">Ubuntu Server 26.04.1, 2 GB, 2 vCPU</text>
+  <text x="180" y="426" text-anchor="middle" fill="#14532d">Wazuh agent 4.14.9 + Apache2</text>
+
+  <!-- win-client -->
+  <rect x="590" y="360" width="260" height="110" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="720" y="386" text-anchor="middle" font-weight="bold" fill="#78350f">win-client  10.10.10.30</text>
+  <text x="720" y="406" text-anchor="middle" fill="#78350f">Windows 10, 4 GB, 2 vCPU</text>
+  <text x="720" y="426" text-anchor="middle" fill="#78350f">Wazuh agent 4.14.9 + Sysmon</text>
+
+  <!-- links agents to manager -->
+  <line x1="240" y1="360" x2="360" y2="300" stroke="#16a34a" stroke-width="2"/>
+  <line x1="660" y1="360" x2="540" y2="300" stroke="#d97706" stroke-width="2"/>
+  <text x="250" y="318" fill="#14532d" font-size="12">1514/tcp events</text>
+  <text x="590" y="318" fill="#78350f" font-size="12">1514/tcp events</text>
+
+  <!-- Dell browser -->
+  <rect x="60" y="120" width="170" height="60" rx="8" fill="#ffffff" stroke="#6b7280"/>
+  <text x="145" y="145" text-anchor="middle">Browser on Dell</text>
+  <text x="145" y="164" text-anchor="middle" font-size="12">https://10.10.10.10</text>
+  <line x1="230" y1="150" x2="300" y2="255" stroke="#6b7280" stroke-width="2"/>
+
+  <!-- Internet -->
+  <rect x="680" y="110" width="170" height="60" rx="8" fill="#ffffff" stroke="#6b7280"/>
+  <text x="765" y="135" text-anchor="middle">Internet (NAT)</text>
+  <text x="765" y="154" text-anchor="middle" font-size="12">siem-host only</text>
+  <line x1="600" y1="150" x2="680" y2="140" stroke="#6b7280" stroke-width="2"/>
+  <text x="640" y="128" text-anchor="middle" font-size="12" fill="#6b7280">NAT</text>
+  <text x="765" y="195" text-anchor="middle" font-size="12" fill="#b91c1c">ubuntu-web and win-client: no route</text>
+</svg>

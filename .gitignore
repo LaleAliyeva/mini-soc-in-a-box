@@ -1,0 +1,27 @@
+# Secrets: never commit these
+*.pem
+*.key
+*.crt
+*.csr
+*.p12
+*.jks
+.env
+*.env
+secrets/
+*password*
+*passwd*
+
+# Wazuh Docker deployment files that hold certificates or password hashes
+wazuh-docker/
+**/wazuh_indexer_ssl_certs/
+**/wazuh_indexer/internal_users.yml
+**/docker-compose.yml
+
+# Local noise
+Thumbs.db
+.DS_Store
+*.log
+*.bak
+
+# Screenshots are evidence, always track them
+!evidence/*.png
